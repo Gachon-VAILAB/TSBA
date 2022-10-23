@@ -103,7 +103,7 @@ if you want to use Pretrained files.
 
 
 python3 create_submission.py --exp_name result --model1 SENetL_Jaeum.pth --model2 SENet.pth --model3 SENetL.pth --Transformation TPS --SequenceModeling BiLSTM --Prediction Attn
-you can change --image_folder (default='test') to set input test_data path
+<br>you can change --image_folder (default='test') to set input test_data path
 ### **Arguments**
 - --train_data: folder path to training lmdb dataset.
 - --valid_data: folder path to validation lmdb dataset.
