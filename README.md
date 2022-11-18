@@ -15,7 +15,7 @@ pip3 install torch==1.10.1
 ```
 
 #### 1.2 Crop AIHUB dataset for training and Create LMDB
-[**prepare the Dataset step by step**](https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=105)
+[**Prepare the Dataset step by step**](https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=105)
 
 AIHUB 데이터셋 압축해제, 저장 경로를 dataset_path로 넘겨주어 crop_dataset.py 실행
 ```
@@ -94,28 +94,28 @@ python3 create_lmdb_dataset.py --inputPath data/ --gtFile data/gt_jaeum.txt --ou
 
 ### 3. Training and Submission
 
-#### 1. Train TPS-SENet [1, 2, 5, 3]-BiLSTM-Attn model
+#### 3.1 Train TPS-SENet [1, 2, 5, 3]-BiLSTM-Attn model
 ```
 python3 train.py --train_data data_lmdb_training --valid_data data_lmdb_validation --Transformation TPS --FeatureExtraction SENet --SequenceModeling BiLSTM --Prediction Attn --batch_size 52 --lr 1 --num_iter 67000 --manualSeed 1111
 ```
 
-#### 2. Train TPS-SENet_Large [2, 3, 7, 4]-BiLSTM-Attn model
+#### 3.2 Train TPS-SENet_Large [2, 3, 7, 4]-BiLSTM-Attn model
 ```
 python3 train.py --train_data data_lmdb_training --valid_data data_lmdb_validation --Transformation TPS --FeatureExtraction SENetL --SequenceModeling BiLSTM --Prediction Attn --batch_size 44 --lr 1 --num_iter 55000 --manualSeed 6
 ```
 
-#### 3. 2번에서 나온 model을 된소리, 겹받침 fine tuning
+#### 3.3 2번에서 나온 model을 된소리, 겹받침 fine tuning
 ```
 python3 train.py --train_data  data_lmdb_training_jaeum --valid_data data_lmdb_validation --saved_model SENetL.pth --Transformation TPS --FeatureExtraction SENetL --SequenceModeling BiLSTM --Prediction Attn --batch_size 44 --lr 0.3 --num_iter 1000 --manualSeed 6
 ```
 
-#### 4. Use  create_submission.py to create a submission file
+#### 3.4 Use  create_submission.py to create a submission file
 if you want to use Pretrained files. [**Click.**](https://drive.google.com/drive/folders/1JsWGSfR3_wUUS_3fHz1iBqCCL9J1DvjY?usp=sharing)
 ```
 python3 create_submission.py --exp_name result --model1 SENetL_Jaeum.pth --model2 SENet.pth --model3 SENetL.pth --Transformation TPS --SequenceModeling BiLSTM --Prediction Attn
 ```
 
-<br>you can change --image_folder (default='test') to set input test_data path
+<br>You can change --image_folder (default='test') to set input test_data path
 ### **Arguments**
 - --train_data: folder path to training lmdb dataset.
 - --valid_data: folder path to validation lmdb dataset.
