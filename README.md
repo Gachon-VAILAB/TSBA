@@ -131,7 +131,7 @@ python3 create_submission.py --exp_name result --model1 SENetL_Jaeum.pth --model
 
 ## **Acknowledgements**
 
-This implementation has been based on these repository [crnn.pytorch](https://github.com/meijieru/crnn.pytorch), [ocr_attention](https://github.com/marvis/ocr_attention).
+This implementation has been based on these repository [crnn.pytorch](https://github.com/meijieru/crnn.pytorch), [clovaAI](https://github.com/clovaai/deep-text-recognition-benchmark).
 
 ## Reference
 [1] [Jeonghun Baek, Geewook Kim, Junyeop Lee, Sungrae Park, Dongyoon Han, Sangdoo Yun, Seong Joon Oh, Hwalsuk Lee. What Is Wrong With Scene Text Recognition Model Comparisons? Dataset and Model Analysis](https://github.com/clovaai/deep-text-recognition-benchmark) <br>
