@@ -145,3 +145,10 @@ This implementation has been based on these repository [crnn.pytorch](https://gi
 [9] T. Q. Phan, P. Shivakumara, S. Tian, and C. L. Tan. Recognizing text with perspective distortion in natural scenes. In ICCV, pages 569–576, 2013. <br>
 [10] A. Risnumawan, P. Shivakumara, C. S. Chan, and C. L. Tan. A robust arbitrary text detection system for natural scene images. In ESWA, volume 41, pages 8027–8048, 2014. <br>
 [11] B. Shi, X. Bai, and C. Yao. An end-to-end trainable neural network for image-based sequence recognition and its application to scene text recognition. In TPAMI, volume 39, pages2298–2304. 2017.
+
+# 🏆 **수상 내역**  
+## 🎖 2022 SW중심대학-공동AI경진대회  
+**🏅 최우수상**  
+
+🔹 **주최:** 과학기술정보통신부  
+🔹 **주관:** 정보통신기획평가원, 중심대학협의회  
